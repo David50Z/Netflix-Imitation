@@ -9,6 +9,7 @@ function App() {
   let [posterName, setPosterName] = useState('')
   let [posterImage, setPosterImage] = useState('')
   let [posterGenre, setPosterGenre] = useState('')
+  let [posterSummary, setPosterSummary] = useState('')
 
   return (
     <div className="App">
@@ -21,12 +22,15 @@ function App() {
         setPosterName={setPosterName}
         setPosterImage={setPosterImage}
         setPosterGenre={setPosterGenre}
+        setPosterSummary={setPosterSummary}
         />} />
 
         <Route path='/Show' element={<Show
           posterName={posterName}
           posterImage={posterImage} 
-          posterGenre={posterGenre} />} />
+          posterGenre={posterGenre} 
+          posterSummary={posterSummary}  
+          />} />
       </Routes>
     </div>
   );

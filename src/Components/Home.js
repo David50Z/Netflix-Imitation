@@ -14,6 +14,9 @@ function Home(props){
   const setPosterGenre = props.setPosterGenre
   const posterGenre = props.posterGenre
 
+  const setPosterSummary = props.setPosterSummary
+  const posterSummary = props.setPosterSummary
+
   let [example, setExample] = useState([])
   let [example2, setExample2] = useState([])
   let [example3, setExample3] = useState([])
@@ -63,6 +66,7 @@ let set = (item) => {
   setPosterName(item.name)
   setPosterImage(item.image.original)
   setPosterGenre(item.genres)
+  setPosterSummary(item.summary)
 }
 
   let actionPosters = actionNum.map((item) => {
@@ -101,7 +105,7 @@ let set = (item) => {
   let adventurePosters = adventureNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <Link to='/Show'><img /*onClick={() => {setPosterName()}}*/ className='Movie' src={item.image.original} /> </Link>
+        <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -129,7 +133,7 @@ let set = (item) => {
   let fantasyPosters = fantasyNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <img className='Movie' src={item.image.original} />
+        <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
