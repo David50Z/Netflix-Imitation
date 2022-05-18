@@ -5,12 +5,28 @@
 .Action-Posters {
   display: flex;
   align-items: center;
-  gap: 5px
+  gap: 5px;
+}
+
+.Action-Title {
+  display: flex;
+  position: relative;
+  left: 1%;
+  top: 30%;
+}
+
+.Adventure-Title {
+  display: flex
 }
 
 .Adventure-Posters {
   display: flex
 
+}
+
+.Fantasy-Posters {
+  display: flex;
+  gap: 5px
 }
 
 .Movie {

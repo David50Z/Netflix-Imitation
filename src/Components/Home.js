@@ -75,20 +75,51 @@ function Home() {
     )
   })
 
-//console.log(adventureNum)
-//console.log(actionNum)
+
+  /*                  HARRY POTTER STUFF!!!                */
+
+
+
+  let fantasyNum = []
+  if(example[0]) {
+    for(let i = 0; i < example.length; i++) {
+      let random = Math.floor(Math.random() * 2)
+        if(example[i].genres.includes('Fantasy') && random === 1 && example[i].name !== 'The Legend of Korra') {
+          fantasyNum.splice(0, 0, example[i].image.original)
+      }
+    }
+  }
+
+
+
+  for(let i = 0; fantasyNum.length > 6; i++) {
+    fantasyNum.pop()
+  }
+  let fantasyPosters = fantasyNum.map((item) => {
+    return (
+      <div className='Movie-container'>
+        <img className='Movie' src={item} />
+      </div>
+    )
+  })
+
+
 
 
 
   return (
     <div className="App">
+        <h1 className='Action-Title'>Action</h1>
       <div className='Action-Posters'>
-      <h1>Action</h1>
         {actionPosters}
         </div>
-        <h1>Adventure</h1>
+        <h1 className='Adventure-Title'>Adventure</h1>
         <div className='Adventure-Posters'>
         {adventurePosters}
+      </div>
+      <h1 className='Fantasy-Title'>Fantasy</h1>
+      <div className='Fantasy-Posters'>
+        {fantasyPosters}
       </div>
     </div>
   );
