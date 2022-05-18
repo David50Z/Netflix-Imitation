@@ -6,7 +6,9 @@ import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 function App() {
 
-
+  let [posterName, setPosterName] = useState('')
+  let [posterImage, setPosterImage] = useState('')
+  let [posterGenre, setPosterGenre] = useState('')
 
   return (
     <div className="App">
@@ -14,8 +16,17 @@ function App() {
         <h1>Home</h1>
       </Link>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Show' element={<Show /*name={posterName} genre={posterGenre}*/ />} />
+        <Route path='/'  element={<Home 
+        posterName={posterName} 
+        setPosterName={setPosterName}
+        setPosterImage={setPosterImage}
+        setPosterGenre={setPosterGenre}
+        />} />
+
+        <Route path='/Show' element={<Show
+          posterName={posterName}
+          posterImage={posterImage} 
+          posterGenre={posterGenre} />} />
       </Routes>
     </div>
   );

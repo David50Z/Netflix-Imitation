@@ -1,14 +1,25 @@
+import Show from './Show';
+
 import {useEffect, useState} from 'react'
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 
-function Home() {
+
+function Home(props){
+  const setPosterName = props.setPosterName
+  const posterName = props.posterName
+
+  const setPosterImage = props.setPosterImage
+  const posterImage = props.posterImage
+
+  const setPosterGenre = props.setPosterGenre
+  const posterGenre = props.posterGenre
 
   let [example, setExample] = useState([])
   let [example2, setExample2] = useState([])
   let [example3, setExample3] = useState([])
 
-  let[posterName, setPosterName] = useState('')
-  let[posterGenre, setPosterGenre] = useState('')
+  
+
 
   useEffect(()=>{
     fetch('https://api.tvmaze.com/shows')
@@ -40,17 +51,24 @@ function Home() {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 4)
         if(example[i].genres.includes('Action') && random === 3 && example[i].name !== 'The Legend of Korra'){
-          actionNum.splice(0, 0, example[i].image.original)
+          actionNum.splice(0, 0, example[i])
       }
     }
   }
   for(let i = 0; actionNum.length > 6; i++) {
     actionNum.pop()
   }
+
+let set = (item) => {
+  setPosterName(item.name)
+  setPosterImage(item.image.original)
+  setPosterGenre(item.genres)
+}
+
   let actionPosters = actionNum.map((item) => {
     return (
       <div className='Movie-container'>
-       <Link to='/Show'><img className='Movie' src={item} /> </Link>
+       <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -70,7 +88,7 @@ function Home() {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 2)
         if(example[i].genres.includes('Adventure') && random === 1 && example[i].name !== 'The Legend of Korra') {
-          adventureNum.splice(0, 0, example[i].image.original)
+          adventureNum.splice(0, 0, example[i])
       }
     }
   }
@@ -83,7 +101,7 @@ function Home() {
   let adventurePosters = adventureNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <Link to='/Show'><img /*onClick={() => {setPosterName()}}*/ className='Movie' src={item} /> </Link>
+        <Link to='/Show'><img /*onClick={() => {setPosterName()}}*/ className='Movie' src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -98,7 +116,7 @@ function Home() {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 2)
         if(example[i].genres.includes('Fantasy') && random === 1 && example[i].name !== 'The Legend of Korra') {
-          fantasyNum.splice(0, 0, example[i].image.original)
+          fantasyNum.splice(0, 0, example[i])
       }
     }
   }
@@ -111,7 +129,7 @@ function Home() {
   let fantasyPosters = fantasyNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <img className='Movie' src={item} />
+        <img className='Movie' src={item.image.original} />
       </div>
     )
   })
@@ -133,6 +151,7 @@ function Home() {
       <h1 className='Fantasy-Title'>Fantasy</h1>
       <div className='Fantasy-Posters'>
         {fantasyPosters}
+
       </div>
     </div>
   );
