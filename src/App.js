@@ -28,7 +28,7 @@ function App() {
   if(example[0]) {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 4)
-        if(example[i].genres.includes('Action') && random === 3){
+        if(example[i].genres.includes('Action') && random === 3 && example[i].name !== 'The Legend of Korra'){
           actionNum.splice(0, 0, example[i].image.original)
       }
     }
@@ -58,11 +58,16 @@ function App() {
   if(example[0]) {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 4)
-        if(example[i].genres.includes('Adventure') && random === 3){
+        if(example[i].genres.includes('Adventure') && random === 3 && example[i].name !== 'The Legend of Korra') {
           adventureNum.splice(0, 0, example[i].image.original)
       }
     }
   }
+
+/*for(let i = 0; i < adventureNum; i++) {
+  if(adventureNum[i] === actionNum[0])
+}*/
+
   for(let i = 0; adventureNum.length > 6; i++) {
     adventureNum.pop()
   }
@@ -75,13 +80,16 @@ function App() {
   })
 
 console.log(adventureNum)
+console.log(actionNum)
 
 
 
   return (
     <div className="App">
-      <div className='Posters'>
+      <div className='Action-Posters'>
         {actionPosters}
+        </div>
+        <div className='Adventure-Posters'>
         {adventurePosters}
       </div>
     </div>

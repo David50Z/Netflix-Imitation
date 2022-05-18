@@ -2,10 +2,14 @@
   text-align: center;
 }
 
-.Posters {
+.Action-Posters {
   display: flex;
   align-items: center;
   gap: 5px
+}
+
+.Adventure-Posters {
+  display: flex
 }
 
 .Movie {
