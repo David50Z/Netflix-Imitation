@@ -7,6 +7,9 @@ function Home() {
   let [example2, setExample2] = useState([])
   let [example3, setExample3] = useState([])
 
+  let[posterName, setPosterName] = useState('')
+  let[posterGenre, setPosterGenre] = useState('')
+
   useEffect(()=>{
     fetch('https://api.tvmaze.com/shows')
       .then(response => response.json())
@@ -15,6 +18,16 @@ function Home() {
       .then(response => response.json())
       .then(data2 => setExample2(data2))*/
   }, [])
+
+  /*if(example[0] && example2[0]) {
+    const combineArray =(example, example2) => {
+      example2.map(x =>{example.push(x)})
+      return example
+    }
+    console.log(combineArray)
+  }*/
+
+
 
   /*                   JHON WICK STUFF!!!                  */
 
@@ -37,7 +50,7 @@ function Home() {
   let actionPosters = actionNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <img className='Movie' src={item} />
+       <Link to='/Show'><img className='Movie' src={item} /> </Link>
       </div>
     )
   })
@@ -70,7 +83,7 @@ function Home() {
   let adventurePosters = adventureNum.map((item) => {
     return (
       <div className='Movie-container'>
-        <img className='Movie' src={item} />
+        <Link to='/Show'><img /*onClick={() => {setPosterName()}}*/ className='Movie' src={item} /> </Link>
       </div>
     )
   })
