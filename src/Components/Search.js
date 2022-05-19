@@ -1,13 +1,37 @@
+import Show from './Show';
+
 import {useEffect, useState} from 'react'
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 
-function Search() {
+function Search(props) {
 
     let [example, setExample] = useState([])
     let [example2, setExample2] = useState([])
 
     const [filteredData, setFilteredData] = useState([])
     const [list, setList] = useState([])
+
+    const watchLaterList = props.watchLaterList;
+
+    const setPosterName = props.setPosterName
+    const posterName = props.posterName
+  
+    const setPosterImage = props.setPosterImage
+    const posterImage = props.posterImage
+  
+    const setPosterGenre = props.setPosterGenre
+    const posterGenre = props.posterGenre
+  
+    const setPosterSummary = props.setPosterSummary
+    const posterSummary = props.setPosterSummary
+
+    const set = (item) => {
+      console.log(item)
+      setPosterName(item.name)
+      setPosterImage(item.image.original)
+      setPosterGenre(item.genres)
+      setPosterSummary(item.summary)
+    }
 
 
     useEffect(()=>{
@@ -31,7 +55,7 @@ function Search() {
         if(example[0]) {
           for(let i = 0; i < example.length; i++) {
               if(example[i].name.toLowerCase().includes(searchWord) && example[i].name !== 'The Legend of Korra') {
-                searchList.splice(0, 0, example[i].image.original)
+                searchList.splice(0, 0, example[i])
             }
           }
           setFilteredData(searchList)
@@ -41,7 +65,7 @@ function Search() {
       let posters = filteredData.map((item) => {
         return (
           <div className='movie-container'>
-           <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item} /> </Link>
+           <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
           </div>
         )
       })

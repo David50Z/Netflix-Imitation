@@ -47,10 +47,20 @@ function App() {
           watchLaterList={watchLaterList}
           />} />
 
-          <Route path='/Search' element={<Search />} />
+          <Route path='/Search' element={<Search 
+          watchLaterList={watchLaterList}
+          setPosterName={setPosterName}
+          setPosterImage={setPosterImage}
+          setPosterGenre={setPosterGenre}
+          setPosterSummary={setPosterSummary}
+          />} />
 
           <Route path='/WatchLater' element={<WatchLater
           watchLaterList={watchLaterList}
+          setPosterName={setPosterName}
+          setPosterImage={setPosterImage}
+          setPosterGenre={setPosterGenre}
+          setPosterSummary={setPosterSummary}
            />} />
       </Routes>
     </div>
