@@ -71,8 +71,8 @@ let set = (item) => {
 
   let actionPosters = actionNum.map((item) => {
     return (
-      <div className='Movie-container'>
-       <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
+      <div className='movie-container'>
+       <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -104,8 +104,8 @@ let set = (item) => {
   }
   let adventurePosters = adventureNum.map((item) => {
     return (
-      <div className='Movie-container'>
-        <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
+      <div className='movie-container'>
+        <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -132,8 +132,8 @@ let set = (item) => {
   }
   let fantasyPosters = fantasyNum.map((item) => {
     return (
-      <div className='Movie-container'>
-        <Link to='/Show'><img className='Movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
+      <div className='movie-container'>
+        <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
   })
@@ -144,16 +144,16 @@ let set = (item) => {
 
   return (
     <div className="App">
-        <h1 className='Action-Title'>Action</h1>
-      <div className='Action-Posters'>
+        <h1 className='action-Title'>Action</h1>
+      <div className='action-Posters'>
         {actionPosters}
         </div>
-        <h1 className='Adventure-Title'>Adventure</h1>
-        <div className='Adventure-Posters'>
+        <h1 className='adventure-Title'>Adventure</h1>
+        <div className='adventure-Posters'>
         {adventurePosters}
       </div>
-      <h1 className='Fantasy-Title'>Fantasy</h1>
-      <div className='Fantasy-Posters'>
+      <h1 className='fantasy-Title'>Fantasy</h1>
+      <div className='fantasy-Posters'>
         {fantasyPosters}
 
       </div>

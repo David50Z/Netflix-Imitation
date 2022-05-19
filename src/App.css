@@ -2,41 +2,45 @@
   text-align: center;
 }
 
-.Action-Posters {
+.action-Posters {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.Action-Title {
+.action-Title {
   display: flex;
   position: relative;
   left: 1%;
   top: 30%;
 }
 
-.Adventure-Title {
+.adventure-Title {
   display: flex
 }
 
-.Adventure-Posters {
+.adventure-Posters {
   display: flex
 
 }
 
-.Fantasy-Posters {
+.fantasy-Posters {
   display: flex;
   gap: 5px
 }
 
-.Movie {
+.movie {
   position: relative;
-  height: 300px;
   width: 200px;
+
 }
 
-.Movie-container {
+.movie-container {
   margin-top: 10%;
   height: 20%;
   width: 80%;
+}
+
+.poster {
+  width: 500px;
 }
