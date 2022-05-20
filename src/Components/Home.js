@@ -33,100 +33,6 @@ function Home(props){
 
 
 
-  /*                   JHON WICK STUFF!!!                  */
-
-
-
-
-
-  /*let actionNum = []
-  if(example[0]) {
-    for(let i = 0; i < example.length; i++) {
-      let random = Math.floor(Math.random() * 4)
-        if(example[i].genres.includes('Action') && random === 3 && example[i].name !== 'The Legend of Korra'){
-          actionNum.splice(0, 0, example[i])
-      }
-    }
-  }
-  for(let i = 0; actionNum.length > 6; i++) {
-    actionNum.pop()
-  }
-
-let set = (item) => {
-  setPosterName(item.name)
-  setPosterImage(item.image.original)
-  setPosterGenre(item.genres)
-  setPosterSummary(item.summary)
-}
-
-  let actionPosters = actionNum.map((item) => {
-    return (
-      <div className='movie-container'>
-       <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
-      </div>
-    )
-  })*/
-
-
-
-
-
-  /*                    ADVENTURE AWAITS!!!                */
-
-
-
-
-
-  /*let adventureNum = []
-  if(example[0]) {
-    for(let i = 0; i < example.length; i++) {
-      let random = Math.floor(Math.random() * 2)
-        if(example[i].genres.includes('Adventure') && random === 1 && example[i].name !== 'The Legend of Korra') {
-          adventureNum.splice(0, 0, example[i])
-      }
-    }
-  }
-
-
-
-  for(let i = 0; adventureNum.length > 6; i++) {
-    adventureNum.pop()
-  }
-  let adventurePosters = adventureNum.map((item) => {
-    return (
-      <div className='movie-container'>
-        <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
-      </div>
-    )
-  })*/
-
-
-  /*                  HARRY POTTER STUFF!!!                */
-
-
-
-  /*let fantasyNum = []
-  if(example[0]) {
-    for(let i = 0; i < example.length; i++) {
-      let random = Math.floor(Math.random() * 2)
-        if(example[i].genres.includes('Fantasy') && random === 1 && example[i].name !== 'The Legend of Korra') {
-          fantasyNum.splice(0, 0, example[i])
-      }
-    }
-  }
-
-
-
-  for(let i = 0; fantasyNum.length > 6; i++) {
-    fantasyNum.pop()
-  }
-  let fantasyPosters = fantasyNum.map((item) => {
-    return (
-      <div className='movie-container'>
-        <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
-      </div>
-    )
-  })*/
 
 
 
@@ -134,8 +40,8 @@ let set = (item) => {
 
   return (
     <div className="App">
-        <h1 className='action-Title'>Action</h1>
-      <div className='action-Posters'>
+      <div>
+      <h1 id='action-Title'>Action</h1>
         <ActionPosters 
           setPosterName ={props.setPosterName}
           posterName ={props.posterName}
@@ -150,8 +56,9 @@ let set = (item) => {
           posterSummary={props.setPosterSummary}
         />
         </div>
+        
+        <div>
         <h1 className='adventure-Title'>Adventure</h1>
-        <div className='adventure-Posters'>
         <AdventurePosters 
                     setPosterName ={props.setPosterName}
           posterName ={props.posterName}
@@ -166,8 +73,8 @@ let set = (item) => {
           posterSummary={props.setPosterSummary}
         />
       </div>
+      <div>
       <h1 className='fantasy-Title'>Fantasy</h1>
-      <div className='fantasy-Posters'>
         <FantasyPosters 
                     setPosterName ={props.setPosterName}
           posterName ={props.posterName}

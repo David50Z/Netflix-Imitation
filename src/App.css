@@ -1,32 +1,51 @@
 .App {
   text-align: center;
+  background-color: rgb(12, 12, 12);
 }
 
 .navBar {
   display: flex;
   justify-content: center;
-  gap: 10px
+  gap: 5%;
+  text-decoration: none;
+  outline: none;
+  color: rgb(37, 121, 190)
+}
+
+
+
+#action-Title {
+  display: flex;
+  position: relative;
+  left: 48%;
+  color: white;
+  top: 120px
+}
+
+.adventure-Title {
+  display: flex;
+  position: relative;
+  left: 48%;
+  color: white;
+  top: 120px
+}
+
+.fantasy-Title {
+  display: flex;
+  position: relative;
+  left: 48%;
+  color: white;
+  top: 120px
 }
 
 .action-Posters {
   display: flex;
-  align-items: center;
   gap: 5px;
 }
 
-.action-Title {
-  display: flex;
-  position: relative;
-  left: 1%;
-  top: 30%;
-}
-
-.adventure-Title {
-  display: flex
-}
-
 .adventure-Posters {
-  display: flex
+  display: flex;
+  gap: 5px;
 
 }
 
@@ -37,7 +56,7 @@
 
 .movie {
   position: relative;
-  width: 200px;
+  width: 100%;
 
 }
 
@@ -51,20 +70,31 @@
   width: 500px;
 }
 
-.style1 {
-
-}
 
 
-.featuredOn {
-  transition: 0.7s;
-  width: 25%;
-  opacity: 1;
 
-}
-
-.featuredOff {
-  transition: 0.7s;
-  width: 25%;
-  opacity: 0
+@media only screen and (max-width: 1000px) {
+  #action-Title {
+    display: flex;
+    position: relative;
+    left: 48%;
+    color: white;
+    top: 60px
+  }
+  
+  .adventure-Title {
+    display: flex;
+    position: relative;
+    left: 48%;
+    color: white;
+    top: 60px
+  }
+  
+  .fantasy-Title {
+    display: flex;
+    position: relative;
+    left: 48%;
+    color: white;
+    top: 60px
+  }
 }

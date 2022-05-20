@@ -17,15 +17,15 @@ function App() {
   return (
     <div className="App">
     <div className='navBar'>
-      <Link to='/'>
+      <Link to='/' className='navBar'>
         <h1>Home</h1>
       </Link>
 
-      <Link to='/Search'>
+      <Link to='/Search' className='navBar'>
         <h1>Search</h1>
       </Link>
 
-      <Link to='/WatchLater'>
+      <Link to='/WatchLater' className='navBar'>
         <h1>Watch Later</h1>
       </Link>
 
