@@ -64,8 +64,8 @@ function Search(props) {
 
       let posters = filteredData.map((item) => {
         return (
-          <div className='movie-container'>
-           <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
+          <div className='searchPosterContainer'>
+           <Link to='/Show'><img className='searchPoster' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
           </div>
         )
       })
