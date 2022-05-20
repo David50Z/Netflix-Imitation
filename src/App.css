@@ -7,6 +7,10 @@ body {
   background-color: rgb(12, 12, 12);
 }
 
+p {
+  color: white
+}
+
 .navBar {
   display: flex;
   justify-content: center;
@@ -87,6 +91,10 @@ body {
 
 .poster {
   width: 500px;
+}
+
+.posterStuff {
+  color: white
 }
 
 

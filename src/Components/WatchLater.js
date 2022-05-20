@@ -25,8 +25,8 @@ function WatchLater(props) {
 
     let list = watchLaterList.map((item) => {
         return (
-          <div className='movie-container'>
-           <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item} /> </Link>
+          <div className='searchPosterContainer'>
+           <Link to='/Show'><img className='searchPoster' onClick={()=>{set(item)}} src={item} /> </Link>
           </div>
         )
       })

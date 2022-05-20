@@ -27,8 +27,8 @@ const show = (props) => {
     return(
         <div>
             <img className="poster" src={posterImage} />
-            <h1>{posterName}</h1>
-            <h2>{posterGenre}</h2>
+            <h1 className="posterStuff">{posterName}</h1>
+            <h2 className="posterStuff">{posterGenre}</h2>
             <p>{posterSummary}</p>
             <button onClick={add}>Watcher later</button>
         </div>
