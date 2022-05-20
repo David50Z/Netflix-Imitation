@@ -37,10 +37,15 @@ function FantasyPosters(props) {
     }
   
   
-  
+    if(window.innerWidth > 800) {
     for(let i = 0; fantasyNum.length > 6; i++) {
       fantasyNum.pop()
     }
+  } else {
+    for(let i = 0; fantasyNum.length > 4; i++) {
+      fantasyNum.pop()
+    }
+  }
 
     let set = (item) => {
         setPosterName(item.name)

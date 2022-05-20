@@ -35,9 +35,15 @@ function ActionPosters(props) {
         }
       }
     }
+    if(window.innerWidth > 800) {
     for(let i = 0; actionNum.length > 6; i++) {
       actionNum.pop()
     }
+  } else {
+    for(let i = 0; actionNum.length > 4; i++) {
+      actionNum.pop()
+    }
+  }
   
   let set = (item) => {
     setPosterName(item.name)

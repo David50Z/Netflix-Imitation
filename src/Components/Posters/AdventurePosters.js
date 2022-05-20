@@ -35,10 +35,15 @@ function AdventurePosters(props) {
         }
       }
     }
-  
+    if(window.innerWidth > 800) {
     for(let i = 0; adventureNum.length > 6; i++) {
       adventureNum.pop()
     }
+  } else{
+    for(let i = 0; adventureNum.length > 4; i++) {
+      adventureNum.pop()
+    }
+  }
 
     let set = (item) => {
         setPosterName(item.name)
