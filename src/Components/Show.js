@@ -26,7 +26,7 @@ const show = (props) => {
 
     return(
         <div>
-            <img className="poster" /*style={{'width': '200px', 'textAlign': 'center'}}*/ src={posterImage} />
+            <img className="poster" src={posterImage} />
             <h1>{posterName}</h1>
             <h2>{posterGenre}</h2>
             <p>{posterSummary}</p>

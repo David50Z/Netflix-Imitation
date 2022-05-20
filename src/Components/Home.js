@@ -1,4 +1,6 @@
-import Show from './Show';
+import ActionPosters from './Posters/ActionPosters'
+import AdventurePosters from './Posters/AdventurePosters'
+import FantasyPosters from './Posters/FantasyPosters'
 
 import {useEffect, useState} from 'react'
 import { Routes, Route, Link, Navigate } from "react-router-dom";
@@ -18,8 +20,7 @@ function Home(props){
   const posterSummary = props.setPosterSummary
 
   let [example, setExample] = useState([])
-  let [example2, setExample2] = useState([])
-  let [example3, setExample3] = useState([])
+
 
   
 
@@ -28,18 +29,7 @@ function Home(props){
     fetch('https://api.tvmaze.com/shows')
       .then(response => response.json())
       .then(data => setExample(data))
-      /*.then(()=> fetch('https://api.tvmaze.com/shows?page=1'))
-      .then(response => response.json())
-      .then(data2 => setExample2(data2))*/
   }, [])
-
-  /*if(example[0] && example2[0]) {
-    const combineArray =(example, example2) => {
-      example2.map(x =>{example.push(x)})
-      return example
-    }
-    console.log(combineArray)
-  }*/
 
 
 
@@ -49,7 +39,7 @@ function Home(props){
 
 
 
-  let actionNum = []
+  /*let actionNum = []
   if(example[0]) {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 4)
@@ -75,7 +65,7 @@ let set = (item) => {
        <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
-  })
+  })*/
 
 
 
@@ -87,7 +77,7 @@ let set = (item) => {
 
 
 
-  let adventureNum = []
+  /*let adventureNum = []
   if(example[0]) {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 2)
@@ -108,14 +98,14 @@ let set = (item) => {
         <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
-  })
+  })*/
 
 
   /*                  HARRY POTTER STUFF!!!                */
 
 
 
-  let fantasyNum = []
+  /*let fantasyNum = []
   if(example[0]) {
     for(let i = 0; i < example.length; i++) {
       let random = Math.floor(Math.random() * 2)
@@ -136,7 +126,7 @@ let set = (item) => {
         <Link to='/Show'><img className='movie' onClick={()=>{set(item)}} src={item.image.original} /> </Link>
       </div>
     )
-  })
+  })*/
 
 
 
@@ -146,15 +136,51 @@ let set = (item) => {
     <div className="App">
         <h1 className='action-Title'>Action</h1>
       <div className='action-Posters'>
-        {actionPosters}
+        <ActionPosters 
+          setPosterName ={props.setPosterName}
+          posterName ={props.posterName}
+
+          setPosterImage={props.setPosterImage}
+          posterImage={props.posterImage}
+
+          setPosterGenre={props.setPosterGenre}
+          posterGenre={props.posterGenre}
+
+          setPosterSummary={props.setPosterSummary}
+          posterSummary={props.setPosterSummary}
+        />
         </div>
         <h1 className='adventure-Title'>Adventure</h1>
         <div className='adventure-Posters'>
-        {adventurePosters}
+        <AdventurePosters 
+                    setPosterName ={props.setPosterName}
+          posterName ={props.posterName}
+
+          setPosterImage={props.setPosterImage}
+          posterImage={props.posterImage}
+
+          setPosterGenre={props.setPosterGenre}
+          posterGenre={props.posterGenre}
+
+          setPosterSummary={props.setPosterSummary}
+          posterSummary={props.setPosterSummary}
+        />
       </div>
       <h1 className='fantasy-Title'>Fantasy</h1>
       <div className='fantasy-Posters'>
-        {fantasyPosters}
+        <FantasyPosters 
+                    setPosterName ={props.setPosterName}
+          posterName ={props.posterName}
+
+          setPosterImage={props.setPosterImage}
+          posterImage={props.posterImage}
+
+          setPosterGenre={props.setPosterGenre}
+          posterGenre={props.posterGenre}
+
+          setPosterSummary={props.setPosterSummary}
+          posterSummary={props.setPosterSummary}
+        />
 
       </div>
     </div>

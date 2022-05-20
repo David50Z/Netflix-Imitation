@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+    <div className='navBar'>
       <Link to='/'>
         <h1>Home</h1>
       </Link>
@@ -27,6 +28,8 @@ function App() {
       <Link to='/WatchLater'>
         <h1>Watch Later</h1>
       </Link>
+
+      </div>
 
       <Routes>
         <Route path='/'  element={<Home 
@@ -62,6 +65,7 @@ function App() {
           setPosterGenre={setPosterGenre}
           setPosterSummary={setPosterSummary}
            />} />
+
       </Routes>
     </div>
   );

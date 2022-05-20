@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.navBar {
+  display: flex;
+  justify-content: center;
+  gap: 10px
+}
+
 .action-Posters {
   display: flex;
   align-items: center;
@@ -43,4 +49,22 @@
 
 .poster {
   width: 500px;
+}
+
+.style1 {
+
+}
+
+
+.featuredOn {
+  transition: 0.7s;
+  width: 25%;
+  opacity: 1;
+
+}
+
+.featuredOff {
+  transition: 0.7s;
+  width: 25%;
+  opacity: 0
 }
