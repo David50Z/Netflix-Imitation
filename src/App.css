@@ -62,10 +62,42 @@ p {
   gap: 5px
 }
 
+.search-input {
+  margin-bottom: 50px;
+}
+
+.search-result-shows {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.searchInputs {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.searchPosterDiv {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  flex-flow: row wrap;
+}
+
 .searchPosterContainer {
-  margin-top: 10%;
-  height: 20%;
-  width: 20%;
+  /*position: relative;
+  left: 50%;
+  transform: translateX(-50%);*/
+  margin-top: 20px;
+  height: 400px;
+  width: 300px;
 }
 
 .searchPoster {

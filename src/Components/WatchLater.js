@@ -17,23 +17,32 @@ function WatchLater(props) {
     const posterSummary = props.setPosterSummary
 
     let set = (item) => {
-      setPosterName(item.name)
-      setPosterImage(item.image.original)
-      setPosterGenre(item.genres)
-      setPosterSummary(item.summary)
+      setPosterName(item.posterName)
+      setPosterImage(item.posterImage)
+      setPosterGenre(item.posterGenre)
+      setPosterSummary(item.posterSummary)
     }
 
     let list = watchLaterList.map((item) => {
         return (
           <div className='searchPosterContainer'>
-           <Link to='/Show'><img className='searchPoster' onClick={()=>{set(item)}} src={item} /> </Link>
+           <Link to='/Show'><img className='searchPoster'
+            onClick={()=>{set(item)}}
+            src={item.posterImage}
+            /*style={{
+              position: 'relative',
+              left: '50%',
+              transform: 'translateX(-50%)'
+
+            }}*/
+            /></Link>
           </div>
         )
       })
 
 
     return(
-        <div>
+        <div className='searchPosterDiv'>
             {list}
         </div>
     )

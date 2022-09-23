@@ -76,10 +76,12 @@ function Search(props) {
 
     return(
         <div className='search'>
-            <div className='searchInputs'>
-                    <input type='text' placeholder='Enter Show Title' onChange={handleFilter} ></input>
-                {posters}
-            </div>
+                <div className='search-input'>
+                  <input type='text' placeholder='Enter Show Title' onChange={handleFilter} ></input>
+                </div>
+                <div className='search-result-shows'>
+                  {posters}
+                </div>
         </div>
     )
 }
