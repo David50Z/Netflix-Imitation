@@ -16,7 +16,7 @@ function Featured() {
 
     let style1 = {
         position: 'absolute',
-        transition: '0.7.1s',
+        transition: '0.7.2s',
 
 
  
